@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html ng-app="meanAppSample">
+
+<head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script> -->
+  
+   
+  
+    <!-- CDN  <script src="cdn/angular.js"></script>
+    <script src="cdn/angular.min.js"></script>
+    <script src="cdn/angular-route.min.js"></script> -->
+    
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="cdn/angular-jwt.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-idle/1.3.2/angular-idle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-idle/1.3.2/angular-idle.map"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-idle/1.3.2/angular-idle.min.js"></script> -->
+
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+    <script src="constant.js"></script>
+    <script src="app/services/serviceexample.js"></script>
+    <script src="app/services/factoryexample.js"></script>
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+  
+  <!-- <script src="app/login/login.controller.js"></script> -->
+  <script src="app/AddAppointment/addappointment.controller.js"></script>
+  <!-- <script src="app/userlist/userlist.controller.js"></script>
+  <script src="app/serviceandfacory/sf.controller.js"></script> -->
+  <script src="app/Appointment/appointment.controller.js"></script>
+  <script src="app/Directives/appointmentDir.js"></script>
+
+    <title>Gear Sample</title>
+</head>
+
+<body>
+
+    <div id="main">
+      
+        <div ng-view></div>
+        
+    </div>
+
+</body>
+
+</html>

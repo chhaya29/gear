@@ -1,0 +1,21 @@
+<div id="form_login">
+    
+    <table class="table table-hover table-striped table-bordered table-condensed">
+        <thead>
+            <tr class="active">
+               <th>Make/Edit Appointment</th>
+                <th>Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in vm.info">
+                <td ng-if='!item.Avalibilty' ng-class="{'rowBG': !item.Avalibilty}"><a href="#/addapointment?BookingSlot={{item._id}}"> Edit Appointment</a></td>
+                <td ng-if='item.Avalibilty'><a href="#/addapointment?BookingSlot={{item._id}}"> Make Appointment</a></td>
+                <td ng-class="{'rowBG': !item.Avalibilty}"> {{item.BookingSlot}} </td>   
+            </tr>
+        </tbody>
+    </table> 
+    
+   </div>   
+</div>
+

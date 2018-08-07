@@ -1,0 +1,22 @@
+<div id="form_login">
+    <div class="login-heading">Login</div>   
+
+    <div class="login-page-details-bx">
+         <p ng-if="vm.message" class="loginError"> Username and/or Password do not match with our records. </p>
+        <p>
+            <label>Username</label>
+            <input type="text" ng-change="vm.clear()" ng-model="vm.username" id="username" placeholder="Username" />
+        </p>
+        <p class="paddingTop">
+            <label>Password</label>
+            <input ng-keyup="$event.keyCode === 13 ? vm.loginUser() : null" type="password"  ng-change="vm.clear()"  ng-model="vm.password" id="password" placeholder="Password" />
+        </p>
+        <div class="login-btton">
+            <button id="submitbutton" type="button" ng-click="vm.loginUser()">Login</button>
+        </div>
+        <div class="login-forgot-pass-text">
+            <a href="#forgotpassword">Forgot Password</a>
+        </div>
+
+    </div>
+</div>

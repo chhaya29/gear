@@ -1,0 +1,30 @@
+<div id="form_login">
+    <div class="login-heading">Appointment</div>   
+
+    <div class="login-page-details-bx">
+         
+        <p>
+            <label>FirstName</label>
+            <input type="text" ng-model="vm.appointment.FirstName" id="firstname" placeholder="FisrtName"/>
+        </p>
+        <label ng-if = 'form_login.firstname.$error'>pease</label>
+        <p class="paddingTop">
+            <label>LastName</label>
+            <input  ng-model="vm.appointment.LastName" id="lastname" placeholder="LastName" required/>
+        </p>
+        <p class="paddingTop">
+            <label>Phone Number</label>
+            <input type="text"  ng-model="vm.appointment.PhoneNumber" id="phnumber" placeholder="Phone Number" required/>
+        </p>
+        <div class="login-btton" ng-if="!vm.editMode">
+            <button id="submitbutton" type="button" ng-click="vm.fixAppointment()">Book Appointment</button>
+        </div> 
+        <div class="login-btton" ng-if="vm.editMode">
+                <button id="submitbutton" type="button" ng-click="vm.fixAppointment()">Edit Appointment</button>
+            </div> 
+        <div class="login-bttonCancel" style="margin-left: 5px">
+                <button id="submitbutton" type="button" ng-click="vm.cancel()">Cancel</button>
+            </div>       
+
+    </div>
+</div>
