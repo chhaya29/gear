@@ -9,6 +9,7 @@
 
         var vm = this;
         vm.editMode = false;
+        vm.showError = false;
 
 
         vm.fixAppointment = fixAppointment;
@@ -19,6 +20,10 @@
         }
 
         function fixAppointment(form) {
+            if(form.$invalid){
+                vm.showError = true;
+                return;
+            }
             vm.appointment.BookingSlot = $routeParams.BookingSlot;
             if (vm.editMode === true) {
                 $http.patch(config.apiUrl + 'user/' + vm.appointment._id, vm.appointment).then(function (response) {

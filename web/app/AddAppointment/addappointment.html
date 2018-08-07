@@ -1,30 +1,47 @@
-<div id="form_login">
-    <div class="login-heading">Appointment</div>   
+<form name='vm.appointmentform'>
+    <div id="form_login">
+        <div class="login-heading">Appointment</div>
 
-    <div class="login-page-details-bx">
-         
-        <p>
-            <label>FirstName</label>
-            <input type="text" ng-model="vm.appointment.FirstName" id="firstname" placeholder="FisrtName"/>
-        </p>
-        <label ng-if = 'form_login.firstname.$error'>pease</label>
-        <p class="paddingTop">
-            <label>LastName</label>
-            <input  ng-model="vm.appointment.LastName" id="lastname" placeholder="LastName" required/>
-        </p>
-        <p class="paddingTop">
-            <label>Phone Number</label>
-            <input type="text"  ng-model="vm.appointment.PhoneNumber" id="phnumber" placeholder="Phone Number" required/>
-        </p>
-        <div class="login-btton" ng-if="!vm.editMode">
-            <button id="submitbutton" type="button" ng-click="vm.fixAppointment()">Book Appointment</button>
-        </div> 
-        <div class="login-btton" ng-if="vm.editMode">
+        <div class="login-page-details-bx">
+
+            <p>
+                <label>FirstName*</label>
+                <input type="text" ng-model="vm.appointment.FirstName" name="firstname" id="firstname" placeholder="FirstName" required />
+                <p ng-if="vm.appointmentform.firstname.$error.required && (vm.appointmentform.firstname.$touched || vm.showError)" style="color:rgb(169,68,66);"
+                    class="help-block">
+                    <i>
+                        <b>FirstName</b>
+                    </i> is required.
+                </p>
+            </p>
+            <label ng-if='form_login.firstname.$error'>pease</label>
+            <p class="paddingTop">
+                <label>LastName*</label>
+                <input ng-model="vm.appointment.LastName" name="lastname" id="lastname" placeholder="LastName" required/>
+                <p ng-if="vm.appointmentform.lastname.$error.required && (vm.appointmentform.lastname.$touched || vm.showError)" style="color:rgb(169,68,66);" class="help-block">
+                <i><b>LastName</b></i> is required.
+            </p>
+            </p>
+            <p class="paddingTop">
+                <label>Phone Number*</label>
+                <input type="number" ng-model="vm.appointment.PhoneNumber" ng-minlength="10" ng-maxlength="10" name="phnumber" id="phnumber" placeholder="Phone Number" required/>
+                <p ng-if="vm.appointmentform.phnumber.$error.required && (vm.appointmentform.phnumber.$touched || vm.showError)" style="color:rgb(169,68,66);" class="help-block">
+                <i><b>Phone Number</b></i> is required.
+            </p>
+            <p ng-if="( vm.appointmentform.phnumber.$error.minlength || vm.appointmentform.phnumber.$error.maxlength)" style="color:rgb(169,68,66);" class="help-block">
+                <i><b>Phone Number</b></i> Should be 10 digit long.
+            </p>
+            </p>
+            <div class="login-btton" ng-if="!vm.editMode">
+                <button id="submitbutton" type="button" ng-click="vm.fixAppointment(vm.appointmentform)">Book Appointment</button>
+            </div>
+            <div class="login-btton" ng-if="vm.editMode">
                 <button id="submitbutton" type="button" ng-click="vm.fixAppointment()">Edit Appointment</button>
-            </div> 
-        <div class="login-bttonCancel" style="margin-left: 5px">
+            </div>
+            <div class="login-bttonCancel" style="margin-left: 5px">
                 <button id="submitbutton" type="button" ng-click="vm.cancel()">Cancel</button>
-            </div>       
+            </div>
 
+        </div>
     </div>
-</div>
+</form>
