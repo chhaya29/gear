@@ -7,12 +7,12 @@
     AppointmentController.$inject = ['$rootScope', '$http', '$location', 'config'];
     function AppointmentController($rootScope, $http, $location, config) {
         var vm = this;
-        vm.user = [{ Name: 'hiren', Salary: 10000 }]
 
+        // to get appointment data
         $http.get('http://localhost:5001/api/slot').then(function (response) {
-                           
-                  vm.user = response.data.data;
-             
-          });
+
+            vm.user = response.data.data;
+
+        });
     }
 })();
